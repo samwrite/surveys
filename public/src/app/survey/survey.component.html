@@ -1,0 +1,30 @@
+<a href="/dashboard" [routerLink]="['/dashboard']">Go to Polls</a>
+<h2>{{survey.question}}</h2>
+<p>Click the Vote button</p>
+<table>
+  <tr>
+    <th>Option</th>
+    <th>Current Count of Votes</th> 
+    <th>Action</th>
+  </tr>
+  <tr>
+    <td>{{survey.o1}}</td>
+    <td>{{survey.o1c}}</td>
+    <td><button (click)="vote1()">Vote</button></td>
+  </tr>
+  <tr>
+    <td>{{survey.o2}}</td>
+    <td>{{survey.o2c}}</td>
+    <td><button (click)="vote2()">Vote</button></td>
+  </tr>
+  <tr>
+    <td>{{survey.o3}}</td>
+    <td>{{survey.o3c}}</td>
+    <td><button (click)="vote3()">Vote</button></td>
+  </tr>
+  <tr>
+    <td>{{survey.o4}}</td>
+    <td>{{survey.o4c}}</td>
+    <td><button (click)="vote4()">Vote</button></td>
+  </tr>
+</table>

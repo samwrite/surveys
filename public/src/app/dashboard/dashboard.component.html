@@ -1,0 +1,25 @@
+<h1>Hi {{this.name}}</h1>
+
+<p>
+  Current Polls:
+</p>
+ <a [routerLink]="['/add']">Create a New Poll</a> | 
+    <a href='/login' (click)="logout()">Logout</a>
+
+  <div class="search"><label>Search</label> <input type="text" id="search" name="searchBar" class="searchBar" [(ngModel)]="searchStr"></div>
+  
+  <div id="surveys">
+    <table class="table table-striped">
+        <tr>
+          <th>Name</th>
+          <th>Survey Question</th> 
+          <th>Date Posted</th>
+          <th>Action</th>
+        </tr>
+        <tr *ngFor="let s of allSurveys | filter:searchStr">
+            <td>{{s.creator}}</td>
+            <td><a (click)=viewSurvey(s._id)>{{s.question}}</a></td>
+            <td>{{s.createdAt | date: 'mediumDate' }}</td>
+            <td *ngIf="name == s.creator"><button (click)="delete(s)">Delete</button></td>  
+          </tr>
+      </table></div>

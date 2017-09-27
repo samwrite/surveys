@@ -1,0 +1,6 @@
+<form (submit)="validateReg()" #form="ngForm">
+  Your Name:
+  <input type="text" id="name" name="name" required [(ngModel)]="user.name" #name="ngModel">
+  <br>  
+  <button type="submit" [disabled]="form.invalid">Login</button>      
+</form>

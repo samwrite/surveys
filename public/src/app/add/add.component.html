@@ -1,0 +1,48 @@
+<a href="/dashboard" [routerLink]="['/dashboard']">Cancel</a>
+
+<h1>Put the question and options here</h1>
+<div id="form">
+    <form (submit)="addSurvey()" #form="ngForm">
+      <label for="question">Question:</label>
+      <input name="question" rows="2" required minlength="8" [(ngModel)]='survey.question' #question='ngModel' />
+      <div class="errors" *ngIf="question.invalid && (question.dirty || question.touched)">
+        <div class="errors" *ngIf="question?.errors.required">Question is required.</div>
+        <div class="errors" *ngIf="question?.errors.minlength">Question should be at least 8 characters long.</div>
+      </div>
+      <br>
+      
+      <label for="o1">Option 1</label>
+      <input name="o1" rows="2" required minlength="3" [(ngModel)]='survey.o1' #o1='ngModel' />
+      <div class="errors" *ngIf="o1.invalid && (o1.dirty || o1.touched)">
+        <div class="errors" *ngIf="o1?.errors.required">Option is required.</div>
+        <div class="errors" *ngIf="o1?.errors.minlength">Option should be at least 3 characters long.</div>
+      </div>
+      <br>      
+
+      <label for="o2">Option 2</label>
+      <input name="o2" rows="2" required minlength="3" [(ngModel)]='survey.o2' #o2='ngModel' />
+      <div class="errors" *ngIf="o2.invalid && (o2.dirty || o2.touched)">
+        <div class="errors" *ngIf="o2?.errors.required">Option is required.</div>
+        <div class="errors" *ngIf="o2?.errors.minlength">Option should be at least 3 characters long.</div>
+      </div>
+      <br>      
+
+      <label for="o3">Option 3</label>
+      <input name="o3" rows="2" required minlength="3" [(ngModel)]='survey.o3' #o3='ngModel' />
+      <div class="errors" *ngIf="o3.invalid && (o3.dirty || o3.touched)">
+        <div class="errors" *ngIf="o3?.errors.required">Option is required.</div>
+        <div class="errors" *ngIf="o3?.errors.minlength">Option should be at least 3 characters long.</div>
+      </div>
+      <br> 
+      
+      <label for="o4">Option 4</label>
+      <input name="o4" rows="2" required minlength="3" [(ngModel)]='survey.o4' #o4='ngModel' />
+      <div class="errors" *ngIf="o4.invalid && (o4.dirty || o4.touched)">
+        <div class="errors" *ngIf="o4?.errors.required">Option is required.</div>
+        <div class="errors" *ngIf="o4?.errors.minlength">Option should be at least 3 characters long.</div>
+      </div>
+      <br>  
+
+      <button type="submit" [disabled]="form.invalid">Add Survey</button>      
+    </form>
+  </div>
